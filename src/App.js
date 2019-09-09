@@ -7,8 +7,8 @@ function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
 
   const [hmValue, sethmValue] = useState(0);
-
   const [wayValue, setwayValue] = useState(0);
+  const [presentTime, setTime] = useState(0);
 
   return (
     <div className="container">
@@ -21,7 +21,7 @@ function App() {
 
             <div className="home__score">{hmValue}</div>
           </div>
-          <div className="timer">00:03</div>
+          <div className="timer">{presentTime}</div>
           <div className="away">
             <h2 className="away__name">Tigers</h2>
             <div className="away__score">{wayValue}</div>
@@ -38,6 +38,9 @@ function App() {
         <div className="awayButtons">
           <button onClick={() => setwayValue(wayValue + 7)} className="awayButtons__touchdown">Away Touchdown</button>
           <button onClick={() => setwayValue(wayValue + 3)} className="awayButtons__fieldGoal">Away Field Goal</button>
+        </div>
+        <div className="timerButtons">
+          <button onClick={() => setTime(presentTime + 1500)} className="awayButtons__touchdown">Timer</button>
         </div>
       </section>
     </div>
